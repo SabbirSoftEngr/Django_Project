@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ book.title }}</h2>
+<p>Author: {{ book.author }}</p>
+<p>Published Date: {{ book.published_date }}</p>
+<p>ISBN: {{ book.isbn }}</p>
+<p>Pages: {{ book.pages }}</p>
+{% if book.cover_image %}
+<img src="{{ book.cover_image.url }}" alt="Cover Image">
+{% endif %}
+<a href="{% url 'book_list' %}">Back to list</a>
+{% endblock %}
